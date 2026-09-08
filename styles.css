@@ -30,3 +30,33 @@
   .button:hover span, .text-link:hover span { transform: translate(3px,-3px); }
   .gallery-item:hover .image-open { transform: rotate(45deg); }
 }
+
+/* Keep the editorial layout legible as the viewport narrows. */
+.about-copy { min-width: 0; }
+.intro { max-width: 18ch; white-space: nowrap; }
+.sales-copy, .about-copy, .contact-grid > * { min-width: 0; }
+.sales-copy h3 { max-width: 15ch; }
+.search-heading > img { border-radius: 18px; }
+.gallery-item, .services-grid article { overflow: hidden; }
+.gallery-item img, .services-grid article img { transition: transform .4s ease; }
+.search-grid label, #contact-form label { font-size: 14px; line-height: 1.5; }
+#contact-form label { display: block; }
+#contact-form label > input, #contact-form label > textarea { margin-top: 7px; }
+#contact-form label:nth-of-type(2) { white-space: nowrap; }
+#contact-form label:nth-of-type(2) input { display: block; width: 100%; white-space: normal; }
+.button, .text-link, .header nav a { transition: color .22s ease, background-color .22s ease, border-color .22s ease, transform .22s ease; }
+.lightbox-bottom button, #close-lightbox { transition: color .22s ease, background-color .22s ease, border-color .22s ease; }
+#lightbox-image { opacity: 1; transition: opacity .18s ease; }
+#lightbox-image.is-changing { opacity: .55; }
+@media (hover: hover) {
+  .gallery-item:hover img, .services-grid article:hover img { transform: scale(1.03); }
+}
+@media (max-width: 760px) {
+  .intro { max-width: none; white-space: normal; }
+  .search-heading > img { width: 100%; }
+  .about { gap: 24px; }
+}
+@media (prefers-reduced-motion: reduce) {
+  html { scroll-behavior: auto; }
+  *, *::before, *::after { animation-duration: .01ms !important; animation-iteration-count: 1 !important; scroll-behavior: auto !important; transition-duration: .01ms !important; }
+}
