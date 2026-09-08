@@ -1,0 +1,27 @@
+{
+  "name": "marci-metzger-homes",
+  "version": "1.0.0",
+  "description": "A responsive redesign of the Marci Metzger homepage, built with HTML, CSS, and JavaScript for the Luxury Presence Junior Web Builder assignment. Features an elegant layout, improved navigation, and mobile-friendly design.",
+  "main": "index.js",
+  "scripts": {
+    "dev": "node serve.cjs",
+    "build": "node build.cjs",
+    "test": "node qa.cjs"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/gerikah/Marci-Metzger-Homes.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "type": "commonjs",
+  "bugs": {
+    "url": "https://github.com/gerikah/Marci-Metzger-Homes/issues"
+  },
+  "homepage": "https://github.com/gerikah/Marci-Metzger-Homes#readme",
+  "devDependencies": {
+    "@playwright/test": "^1.63.0",
+    "sharp": "^0.35.4"
+  }
+}

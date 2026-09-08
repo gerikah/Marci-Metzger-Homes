@@ -1,0 +1,11 @@
+node_modules/
+dist/
+test-results/
+playwright-report/
+qa/
+*.tar.gz
+assets-contact-sheet.jpg
+inspect-assets.cjs
+original-homepage.html
+original-config.js
+fonts-source.css
