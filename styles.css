@@ -5,3 +5,28 @@
 .menu-toggle{display:none}.about-copy,.portrait,.hero-content{min-width:0}.hero-content{width:100%}
 @media(min-width:761px){.gallery-item:nth-last-child(-n+2){grid-column:span 2;aspect-ratio:2.4}.gallery-item:nth-last-child(-n+2) img{aspect-ratio:2.4}}
 @media(max-width:440px){.about h2 br{display:block}.portrait{width:100%;max-width:280px}.hero h1{font-size:clamp(58px,14vw,68px)}}
+
+/* Small, one-time entrances; content stays visible without JavaScript. */
+@keyframes gentle-reveal {
+  from { opacity: 0; transform: translateY(20px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+@keyframes hero-settle {
+  from { transform: scale(1.035); }
+  to { transform: scale(1); }
+}
+@media (prefers-reduced-motion: no-preference) {
+  .hero-photo { animation: hero-settle 1.8s cubic-bezier(.2,.65,.3,1) both; }
+  .hero-content > * { animation: gentle-reveal .8s cubic-bezier(.2,.65,.3,1) both; }
+  .hero-content > :nth-child(2) { animation-delay: .12s; }
+  .hero-content > :nth-child(3) { animation-delay: .24s; }
+  .motion-reveal { animation: gentle-reveal .65s cubic-bezier(.2,.65,.3,1) var(--reveal-delay, 0ms) both; }
+  .hero-content > :focus-within, .motion-reveal:focus-within { animation: none; }
+  .button span, .text-link span, .image-open { transition: transform .25s ease; }
+  #lightbox[open] { animation: gentle-reveal .22s ease-out; }
+  .header nav.is-open { animation: gentle-reveal .25s ease-out; }
+}
+@media (hover: hover) and (prefers-reduced-motion: no-preference) {
+  .button:hover span, .text-link:hover span { transform: translate(3px,-3px); }
+  .gallery-item:hover .image-open { transform: rotate(45deg); }
+}
